@@ -1,0 +1,27 @@
+# Disko partition
+nix-env -iA nixos.wget
+wget https://raw.githubusercontent.com/Andrey0189/nixos-config/refs/heads/main/disko.nix
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko disko.nix  ls
+
+
+
+# Install from github:
+nix-env -iA nixos.git
+git clone https://github.com/Andrey0189/nixos-config.git
+mv nixos-config $HOME/nix # Config is supposed to be in the ~/nix directory
+cd $HOME/nix
+sudo nixos-rebuild switch --flake .
+home-manager switch --flake .
+
+
+sudo nixos-generate-config --root /mnt
+
+Cleaning:
+nix-store --gc
+nix-collect-garbage -d
+
+Problems with no space left on device:
+mount | grep /tmp
+df -Th /tmp
+sudo mount -t tmpfs -o size=15G tmpfs /tmp
+# mount -o remount,size=15G /tmp
