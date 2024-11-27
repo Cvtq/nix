@@ -8,7 +8,7 @@
         size = 13.0;
         # draw_bold_text_with_bright_colors = true;
         normal = {
-          family = "IBM Plex Mono";
+          family = "JetBrains Mono";
           style = "Bold";
         };
       };
