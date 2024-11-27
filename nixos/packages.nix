@@ -5,7 +5,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    #seatd
     # Desktop apps
     alacritty
     rofi
