@@ -4,12 +4,12 @@
       modifier = "Mod4";
       # Use alacritty as default terminal
       terminal = "alacritty";
-      startup = [
-        # Launch on start
-        {
-            #command = "alacritty";
-        }
-      ];
+#       startup = [
+#         # Launch on start
+#         {
+#             command = "alacritty";
+#         }
+#       ];
     };
   };
 }
