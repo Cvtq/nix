@@ -31,4 +31,5 @@
   };
 
   system.stateVersion = "23.05"; # Don't change it bro
+  security.polkit.enable = true;
 }
