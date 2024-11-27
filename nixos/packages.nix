@@ -66,6 +66,7 @@
     seatd
     xdg-desktop-portal-hyprland
     waybar
+    anyrun
     hyprlock
     sway
     i3
