@@ -22,6 +22,7 @@
     deviceSection = ''Option "TearFree" "True"'';
     #displayManager.gdm.enable = true;
     #desktopManager.gnome.enable = true;
+  };
 
     hardware.nvidia = {
       # Modesetting is required.
@@ -52,6 +53,5 @@
 
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
       package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
   };
 }
