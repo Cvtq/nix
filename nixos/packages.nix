@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     # Desktop apps
     alacritty
+    foot
     rofi
     wofi
     mpv

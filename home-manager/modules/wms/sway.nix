@@ -3,7 +3,7 @@
     config = rec {
       modifier = "Mod1";
       # Use alacritty as default terminal
-      terminal = "alacritty";
+      terminal = "foot";
 #       startup = [
 #         {
 #             # Launch on start
