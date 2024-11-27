@@ -299,27 +299,6 @@
         "type": "github"
       }
     },
-    "polymc": {
-      "inputs": {
-        "flake-compat": "flake-compat_3",
-        "libnbtplusplus": "libnbtplusplus",
-        "nixpkgs": "nixpkgs_2",
-        "tomlplusplus": "tomlplusplus"
-      },
-      "locked": {
-        "lastModified": 1714685004,
-        "narHash": "sha256-ea/NfdZ9p7UlhUZhCz4LI1CZWLw4cjVN/lkaRjHrvYI=",
-        "owner": "PolyMC",
-        "repo": "PolyMC",
-        "rev": "62fd3d436a204232a5ae3bf9be6fde5fec819b81",
-        "type": "github"
-      },
-      "original": {
-        "owner": "PolyMC",
-        "repo": "PolyMC",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -354,7 +333,6 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim",
-        "polymc": "polymc"
       }
     },
     "systems": {
