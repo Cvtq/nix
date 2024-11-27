@@ -4,9 +4,9 @@
     windowManager.hypr.enable = true;
 
     displayManager = {
-      autoLogin.enable = true;
+      autoLogin.enable = false;
       autoLogin.user = "raiden";
-      lightdm.enable = true;
+      lightdm.enable = false;
     };
 
     layout = "us";
@@ -20,7 +20,7 @@
 
     videoDrivers = ["nvidia"];
     deviceSection = ''Option "TearFree" "True"'';
-    #displayManager.gdm.enable = true;
+    displayManager.gdm.enable = true;
     #desktopManager.gnome.enable = true;
   };
 }
