@@ -5,6 +5,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    #seatd
     # Desktop apps
     alacritty
     rofi
@@ -65,6 +66,7 @@
     seatd
     xdg-desktop-portal-hyprland
     waybar
+    hyprlock
 
     # Sound
     pipewire
