@@ -4,8 +4,8 @@
     keymaps = {
       #silent = true;
 
-      next = "<TAB>";
-      previous = "<S-TAB>";
+      #next = "<TAB>";
+      #previous = "<S-TAB>";
       # close = "<C-q>";
     };
   };
