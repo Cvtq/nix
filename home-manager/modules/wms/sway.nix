@@ -9,9 +9,10 @@
 #       startup = [
 #         {
 #             # Launch on start
-#             command = "zsh";
+#             command = "waybar";
 #         }
 #       ];
+
       keybindings = {
             # Add a custom keybinding to open the terminal
             "${modifier}+t" = "exec ${terminal}";
