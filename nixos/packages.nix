@@ -32,7 +32,6 @@
     mediainfo
     ranger
     zram-generator
-    cava
     ntfs3g
     yt-dlp
     brightnessctl
