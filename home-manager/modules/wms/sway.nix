@@ -4,12 +4,12 @@
       modifier = "Mod1";
       # Use alacritty as default terminal
       terminal = "alacritty";
-      startup = [
-        # Launch on start
-        {
-            command = "zsh";
-        }
-      ];
+#       startup = [
+#         {
+#             # Launch on start
+#             command = "zsh";
+#         }
+#       ];
     };
   };
 }
