@@ -16,7 +16,6 @@
   i18n.defaultLocale = "en_US.UTF-8"; # Select internationalisation properties.
 
     nix = {
-    binaryCaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ]
     settings = {
       experimental-features = [ "nix-command" "flakes" ]; # Enabling flakes
 #       substituters = [

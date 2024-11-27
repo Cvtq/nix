@@ -25,7 +25,6 @@
     fastfetch
     htop
     nix-index
-    unzip
     scrot
     ffmpeg
     light
@@ -34,7 +33,6 @@
     ranger
     zram-generator
     cava
-    zip
     ntfs3g
     yt-dlp
     brightnessctl

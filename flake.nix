@@ -21,6 +21,7 @@
     nixConfig = {
     extra-substituters = [
       #"https://colmena.cachix.org"
+      "https://aseipp-nix-cache.global.ssl.fastly.net"
       "https://hyprland.cachix.org"
       #"https://app.cachix.org"
       #"https://nyx.chaotic.cx"
