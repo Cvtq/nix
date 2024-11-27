@@ -1,7 +1,7 @@
 {
   services.xserver = {
     enable = true;
-    windowManager.hypr.enable = true;
+    windowManager.qtile.enable = true;
 
     displayManager = {
       autoLogin.enable = false;
@@ -14,7 +14,9 @@
 
     libinput = {
       enable = true;
+      # disabling mouse acceleration
       mouse.accelProfile = "flat";
+      # disabling touchpad acceleration
       touchpad.accelProfile = "flat";
     };
 

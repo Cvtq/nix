@@ -50,10 +50,11 @@
     gromit-mpx
 
     # Xorg stuff
-    hypr
     xterm
     xclip
     xorg.xbacklight
+
+    qtile
 
     # Wayland stuff
     xwayland
