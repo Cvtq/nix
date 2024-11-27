@@ -3,11 +3,11 @@
     enable = true;
     windowManager.herbstluftwm.enable = true;
 
-#     displayManager = {
-#       autoLogin.enable = true;
-#       autoLogin.user = "raiden";
-#       lightdm.enable = false;
-#     };
+    displayManager = {
+      autoLogin.enable = true;
+      autoLogin.user = "raiden";
+      lightdm.enable = false;
+    };
 
     layout = "us";
     xkbVariant = "";
