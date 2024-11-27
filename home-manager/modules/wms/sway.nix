@@ -4,7 +4,8 @@
       modifier = "Mod1";
       # Use alacritty as default terminal
       terminal = "foot";
-      menu = "anyrun"
+      menu = "anyrun";
+
 #       startup = [
 #         {
 #             # Launch on start
