@@ -2,7 +2,7 @@
   programs.nixvim.plugins.barbar = {
     enable = true;
     keymaps = {
-      silent = true;
+      #silent = true;
 
       next = "<TAB>";
       previous = "<S-TAB>";
