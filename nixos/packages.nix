@@ -53,7 +53,7 @@
     xterm
     xclip
     xorg.xbacklight
-    qtile
+    i3
 
     # Wayland stuff
     xwayland

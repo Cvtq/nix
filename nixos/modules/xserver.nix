@@ -1,7 +1,7 @@
 {
   services.xserver = {
     enable = true;
-    windowManager.qtile.enable = true;
+    windowManager.i3.enable = true;
 
     displayManager = {
       autoLogin.enable = false;
