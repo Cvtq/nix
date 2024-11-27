@@ -8,5 +8,6 @@
 
     #./wms/hyprland.nix
     #./wms/waybar.nix
+    ./wms/sway.nix
   ];
 }

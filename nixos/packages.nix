@@ -53,7 +53,6 @@
     xterm
     xclip
     xorg.xbacklight
-    i3
 
     # Wayland stuff
     xwayland
@@ -67,6 +66,8 @@
     xdg-desktop-portal-hyprland
     waybar
     hyprlock
+    sway
+    i3
 
     # Sound
     pipewire
