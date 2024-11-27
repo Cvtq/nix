@@ -14,9 +14,10 @@
 #       ];
       keybindings = {
             # Add a custom keybinding to open the terminal
-            "${modifier}+t" = "${terminal}";
+            "${modifier}+t" = "exec ${terminal}";
             "${modifier}+c" = "kill";
-            "${modifier}+r" = "${menu}";
+            "${modifier}+r" = "exec ${menu}";
+            "${modifier}+Shift+r" = "reload";
         };
     };
   };
