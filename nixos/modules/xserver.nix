@@ -6,7 +6,8 @@
     displayManager = {
       autoLogin.enable = false;
       autoLogin.user = "raiden";
-      lightdm.enable = false;
+      lightdm.enable = true;
+      #gdm.enable = true;
     };
 
     layout = "us";
@@ -20,9 +21,7 @@
       touchpad.accelProfile = "flat";
     };
 
-    videoDrivers = ["nvidia"];
+    #videoDrivers = ["nvidia"];
     deviceSection = ''Option "TearFree" "True"'';
-    displayManager.gdm.enable = true;
-    #desktopManager.gnome.enable = true;
   };
 }
