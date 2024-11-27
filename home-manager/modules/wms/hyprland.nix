@@ -6,7 +6,7 @@
     settings = {
       "$mainMod" = "SUPER";
 
-      monitor = ",1920x1080@90,auto,1";
+      #monitor = ",1920x1080@90,auto,1";
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -111,8 +111,6 @@
       ];
 
       exec-once = [
-        "swww init"
-        "swww img ~/Downloads/nixos-chan.png"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
