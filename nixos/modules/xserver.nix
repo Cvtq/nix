@@ -1,7 +1,7 @@
 {
   services.xserver = {
     enable = true;
-    #windowManager.herbstluftwm.enable = true;
+    windowManager.hypr.enable = true;
 
     displayManager = {
       autoLogin.enable = true;
