@@ -9,7 +9,9 @@
       description = "Raiden";
       home  = "/home/raiden";
       extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
-      packages = with pkgs; [];
+      packages = with pkgs; [
+        "brave"
+      ];
     };
   };
 

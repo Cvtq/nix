@@ -13,5 +13,6 @@
     ./bluetooth.nix
     ./nixvim/nixvim.nix
     ./hardware.nix
+    ./virtualbox.nix
   ];
 }

@@ -86,6 +86,7 @@
 
     # Other
     home-manager
+    lightdm
     spice-vdagent
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
@@ -93,6 +94,7 @@
   ];
 
   fonts.packages = with pkgs; [
+    ibm-plex
     jetbrains-mono
     noto-fonts
     noto-fonts-emoji
