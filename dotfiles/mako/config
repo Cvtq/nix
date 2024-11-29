@@ -1,0 +1,74 @@
+# Take a look at the mako manpage with the command:
+#   man 5 mako
+# To view all configuration options.
+
+max-history=50
+history=1
+font="IBM Plex Mono Regular 12"
+background-color=#285577
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+output=HDMI-A-1
+layer=overlay
+anchor=top-center
+# alpha (b3) https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+#bf
+background-color=#2b303bee
+width=500
+height=300
+margin=10
+padding=0,10,10
+border-size=2
+border-color=#464459
+border-radius=2
+icons=1
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+
+# == Mode: Away ==
+[mode=away]
+default-timeout=0
+ignore-timeout=1
+
+# == Mode: Do Not Disturb ==
+[mode=do-not-disturb]
+invisible=1
+
+# == Urgency modes ==
+[urgency=normal]
+on-notify=exec mpv --no-audio-display /home/raiden/.config/mako/intuition.mp3
+border-color=#33ccffee
+
+[urgency=high]
+border-color=#F20F22
+default-timeout=0
+
+# == Applications ==
+[app-name=telegram-desktop]
+border-color=#F2A413
+
+[app-name=vesktop]
+border-color=#47458C
+
+[app-name=discord]
+border-color=#47458C
+
+# == Notification settings coming from my love <3 ==
+[app-name=telegram-desktop desktop-entry=".*Любимая.*"]
+on-notify=exec mpv --no-audio-display /home/raiden/.config/mako/meow2.mp3
+border-color=#A449A6
+
+[app-name=discord desktop-entry=".*xyicociikmeow.*"]
+on-notify=exec mpv --no-audio-display /home/raiden/.config/mako/meow2.mp3
+border-color=#A449A6
+
+[app-name=vesktop desktop-entry=".*xyicociikmeow.*"]
+on-notify=exec mpv --no-audio-display /home/raiden/.config/mako/meow2.mp3
+border-color=#A449A6
+
+[summary~="log-.*"]
+border-color=#a3be8c
+
+[app-name=vesktop summary~="(.*(^| )orz|ORZ|sto|STO|otl|OTL( |$).*)"]
+invisible=1

@@ -1,0 +1,242 @@
+// =============================================================================
+//
+// Waybar configuration
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+//
+// =============================================================================
+
+[{
+    // If height property would be not present, it'd be calculated dynamically
+    "output": ["HDMI-A-1"],
+	"height": 40,
+	"spacing": 4,
+    "layer": "top",
+    "position": "top",
+    // Composition
+    "modules-left": ["hyprland/workspaces",
+        "cpu",
+        "memory",
+        "network",
+        "bluetooth",
+        "temperature"],//, "hyprland/mode", "hyprland/scratchpad", "custom/media"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+        "custom/bell",
+		"tray",
+        "pulseaudio#microphone",
+        "pulseaudio#volume",
+        "hyprland/language",
+        "clock#barnaul",
+        "clock",
+        "custom/weather",
+    ],
+    // Modules
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            //"3": "",
+            "urgent": "",
+            "focused": "",
+            "default": "" // 
+        }
+    },
+	"clock": {
+        "format": "{:%A, %d %B %Y %r}", //
+        "interval": 1
+
+	},
+    "clock#barnaul": {
+        "format": "{:%r}", //
+        "timezone": "Asia/Barnaul",
+        "interval": 1
+
+	},
+    "cpu": {
+        "interval": 1,
+        //"format": "  {usage}% ({load})", // Icon: microchip
+        "format": "  {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7} ({load}) ",
+        "format-icons": [
+            "<span color='#ffffff'>▁</span>", // green
+            "<span color='#2aa9ff'>▂</span>", // blue
+            "<span color='#f8f8f2'>▃</span>", // white
+            "<span color='#f8f8f2'>▄</span>", // white
+            "<span color='#ffffa5'>▅</span>", // yellow
+            "<span color='#ffffa5'>▆</span>", // yellow
+            "<span color='#ff9977'>▇</span>", // orange
+            "<span color='#dd532e'>█</span>"  // red
+        ],
+        "states": {
+          "warning": 70,
+          "critical": 90
+        },
+        "on-click": "alacritty --class htop -e htop",
+    },
+    "custom/keyboard-layout": {
+      "exec": "hyprlandmsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+      // Interval set only as a fallback, as the value is updated by signal
+      "interval": 30,
+      "format": "  {}", // Icon: keyboard
+      // Signal sent by hyprland key binding (~/.config/hyprland/key-bindings)
+      "signal": 1, // SIGHUP
+      "tooltip": false
+    },
+    "memory": {
+        "interval": 1,
+        "format": "  {}%", // Icon: memory
+        "states": {
+            "warning": 60,
+            "critical": 80
+        }
+    },
+    "network": {
+        "interval": 1,
+        "format-wifi": "{essid} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "⚠  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        //"on-click": "XDG_CURRENT_DESKTOP='gnome' gnome-control-center",
+        "on-click": "alacritty --class nmtui -e nmtui",
+        //"on-click": "konsole -e nmtui",
+        "max-length": 50
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 100,
+        "separate-outputs": true
+    },
+    "pulseaudio#volume": {
+       "format": "{icon}  {volume}%",
+       "format-bluetooth": "{icon}  {volume}%",
+       "format-muted": "x",
+       "format-source": "",
+       "states":{
+        "off": 0,
+        "middle": 50
+       },
+       "format-source-middle": "",
+       "format-source-off": "",
+       "format-source-muted": "",
+       "format-icons": {
+           "headphones": "",
+           "handsfree": "",
+           "headset": "",
+           "phone": "",
+           "portable": "",
+           "car": "",
+           "default": ["", ""]
+       },
+       "scroll-step": 1,
+       "max-volume": 150,
+       "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+       "on-click-middle": "pavucontrol"
+    },
+    "pulseaudio#microphone": {
+        //"scroll-step": 1,
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-middle": "",
+        "format-source-off": "",
+        "format-source-muted": "",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "pavucontrol",
+        "tooltip": false,
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+     },
+    "temperature": {
+      "critical-threshold": 80,
+      "interval": 5,
+      "format": "{icon}  {temperatureC}°C",
+      "format-icons": [
+          "", // Icon: temperature-empty
+          "", // Icon: temperature-quarter
+          "", // Icon: temperature-half
+          "", // Icon: temperature-three-quarters
+          ""  // Icon: temperature-full
+      ],
+      "tooltip": true
+    },
+	"hyprland/language": {
+		"format": "  {}",
+		"min-length": 4,
+        "format-en": "en",
+        "format-ru": "ru",
+		"on-click": "hyprctl switchxkblayout ydotoold-virtual-device  next",
+		"tooltip": false
+	},
+    "tray": {
+        "icon-size": 21,
+        "spacing": 12
+    },
+    "custom/bell": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/mako_status.sh",
+        "interval": 1,
+        "on-click": "~/.config/waybar/scripts/mako_status.sh show",  // Show notifications on left-click
+        "on-click-right": "~/.config/waybar/scripts/mako_status.sh toggle"  // Toggle mode on right-click
+    },
+    "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --ampm --hide-conditions --location 'Saint Petersburg,RU'",
+        "return-type": "json"
+    },
+},
+{
+    // If height property would be not present, it'd be calculated dynamically
+    "output": "!HDMI-A-1",
+	"height": 26,
+	"spacing": 4,
+    "layer": "top",
+    "position": "top",
+    // Composition
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["clock"],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "1": "",
+            "urgent": "",
+            "focused": "",
+            "default": "" // 
+        }
+    },
+	"clock": {
+        "format": "{:%A, %d %B %Y %r}", //
+        "interval": 1
+
+	},
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+}
+]

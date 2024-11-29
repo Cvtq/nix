@@ -1,0 +1,65 @@
+{
+    "input": {
+        "blocklist": [],
+        "limiter#0": {
+            "alr": false,
+            "alr-attack": 5.0,
+            "alr-knee": 0.0,
+            "alr-release": 50.0,
+            "attack": 5.0,
+            "bypass": false,
+            "dithering": "None",
+            "external-sidechain": false,
+            "gain-boost": true,
+            "input-gain": 0.0,
+            "lookahead": 5.0,
+            "mode": "Herm Thin",
+            "output-gain": 0.0,
+            "oversampling": "None",
+            "release": 5.0,
+            "sidechain-preamp": 0.0,
+            "stereo-link": 100.0,
+            "threshold": 0.0
+        },
+        "loudness#0": {
+            "bypass": false,
+            "clipping": false,
+            "clipping-range": 6.0,
+            "fft": "16384",
+            "input-gain": 0.0,
+            "output-gain": 5.0,
+            "std": "ISO226-2003",
+            "volume": 7.0
+        },
+        "plugins_order": [
+            "speex#0",
+            "rnnoise#0",
+            "loudness#0",
+            "limiter#0"
+        ],
+        "rnnoise#0": {
+            "bypass": true,
+            "enable-vad": true,
+            "input-gain": 0.0,
+            "model-name": "",
+            "output-gain": 0.0,
+            "release": 0.0,
+            "vad-thres": 1.0,
+            "wet": 0.0
+        },
+        "speex#0": {
+            "bypass": false,
+            "enable-agc": false,
+            "enable-denoise": true,
+            "enable-dereverb": false,
+            "input-gain": 0.0,
+            "noise-suppression": -70,
+            "output-gain": 0.0,
+            "vad": {
+                "enable": true,
+                "probability-continue": 90,
+                "probability-start": 95
+            }
+        }
+    }
+}

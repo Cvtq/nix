@@ -41,6 +41,19 @@
     lazygit
     bluez
     bluez-tools
+    fzf
+    atuin
+    dust
+    btop
+    bat
+    tldr
+    eza
+    ncdu
+    gdu
+    ranger
+    trashy
+    zoxide
+    mc
 
     # GUI utils
     feh
@@ -49,6 +62,9 @@
     screenkey
     mako
     gromit-mpx
+    vlc
+    brave
+    librewolf
 
     # Xorg stuff
     xterm
@@ -76,7 +92,7 @@
     #pulseaudio
     pamixer
 
-    # GPU stuff 
+    # GPU stuff
 #     amdvlk
 #     rocm-opencl-icd
 #     glaxnimate
